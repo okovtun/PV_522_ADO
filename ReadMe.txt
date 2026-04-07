@@ -2,6 +2,10 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiIN0ubAtUHCDYyJY_ob19ONJ
 
 TODO:
+1. Создать ветку 'HW_5';
+2. Загрузить данные на все остальные владки;
+
+DONE:
 1. В 'DBtools.Connector' добавить метод Update();
 
 DONE:
