@@ -135,12 +135,14 @@ AND CONSTRAINT_TYPE = N'PRIMARY KEY'
 				if (i != s_values.Length - 1) parsed += ",";
 			}
 			string cmd = $"UPDATE {table} SET {parsed} WHERE {condition}";
-			Update(cmd);
+			if (Scalar($"SELECT {GetPrimaryKeyColumnName(table)} FROM {table} WHERE {parsed.Replace(",", " AND ")} ") == null)
+				Update(cmd);
 		}
 		string ParseValue(string value)
 		{
 			if (value.Length > 1)
 			{
+				value = value.Trim();	//Метод Trim() удаляет пробелы в начале и в конце строки
 				if (value[0] != 'N' && value[1] != '\'') value = $"N'{value}'";
 				/*
 				-------------------------
