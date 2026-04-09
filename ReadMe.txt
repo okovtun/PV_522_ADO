@@ -2,6 +2,9 @@
 https://www.youtube.com/playlist?list=PLeqyOOqxeiIN0ubAtUHCDYyJY_ob19ONJ
 
 TODO:
+1. На вкадке 'Groups' отобразить учебные дни словами;
+
+DONE:
 1. Создать ветку 'HW_5';
 2. Загрузить данные на все остальные владки;
 
