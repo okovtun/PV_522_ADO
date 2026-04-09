@@ -3,6 +3,7 @@ https://www.youtube.com/playlist?list=PLeqyOOqxeiIN0ubAtUHCDYyJY_ob19ONJ
 
 TODO:
 1. На вкадке 'Groups' отобразить учебные дни словами;
+2. Обеспечить фильтрацию студентов по группе и направление обучения;
 
 DONE:
 1. Создать ветку 'HW_5';
