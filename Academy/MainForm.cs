@@ -69,6 +69,7 @@ namespace Academy
 
 		private void buttonAddStudent_Click(object sender, EventArgs e)
 		{
+			//			l-value = r-value;
 			StudentForm student = new StudentForm();
 			student.ShowDialog();
 		}
