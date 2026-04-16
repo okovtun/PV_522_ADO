@@ -71,7 +71,7 @@ namespace Academy
 		{
 			//			l-value = r-value;
 			StudentForm student = new StudentForm();
-			student.ShowDialog();
+			//student.ShowDialog();
 			if (student.ShowDialog() == DialogResult.OK) tabControl_SelectedIndexChanged(tabControl, null);
 		}
 
