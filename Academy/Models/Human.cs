@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Drawing;
+using System.IO;
 
 namespace Academy.Models
 {
@@ -26,13 +27,13 @@ namespace Academy.Models
 			)
 		{
 			this.id = id;
-			this.last_name		= last_name;
-			this.first_name		= first_name;
-			this.middle_name	= middle_name;
-			this.birth_date		= birth_date;
-			this.email			= email;
-			this.phone			= phone;
-			this.photo			= photo;
+			this.last_name = last_name;
+			this.first_name = first_name;
+			this.middle_name = middle_name;
+			this.birth_date = birth_date;
+			this.email = email;
+			this.phone = phone;
+			this.photo = photo;
 		}
 		public Human(object[] values)
 		{
@@ -44,16 +45,16 @@ namespace Academy.Models
 			email = values[5].ToString();
 			phone = values[6].ToString();
 		}
-		public Human(Human other)	//CopyConstructor
+		public Human(Human other)   //CopyConstructor
 		{
-			this.id				= other.id;
-			this.last_name		= other.last_name;
-			this.first_name		= other.first_name;
-			this.middle_name	= other.middle_name;
-			this.birth_date		= other.birth_date;
-			this.email			= other.email;
-			this.phone			= other.phone;
-			this.photo			= other.photo;
+			this.id = other.id;
+			this.last_name = other.last_name;
+			this.first_name = other.first_name;
+			this.middle_name = other.middle_name;
+			this.birth_date = other.birth_date;
+			this.email = other.email;
+			this.phone = other.phone;
+			this.photo = other.photo;
 		}
 		public virtual string GetNames()
 		{
@@ -61,7 +62,7 @@ namespace Academy.Models
 		}
 		public virtual string GetValues()
 		{
-			return 
+			return
 $"N'{last_name}',N'{first_name}',N'{middle_name}',N'{birth_date}',N'{email}',N'{phone}'";
 		}
 		public virtual string GetUpdateString()
@@ -73,6 +74,14 @@ $"N'{last_name}',N'{first_name}',N'{middle_name}',N'{birth_date}',N'{email}',N'{
 					$"birth_date=N'{birth_date}'," +
 					$"email=N'{email}'," +
 					$"phone=N'{phone}'";
+		}
+		public byte[] SerializePhoto()
+		{
+			using (MemoryStream ms = new MemoryStream())
+			{
+				photo.Save(ms, photo.RawFormat);
+				return ms.ToArray();
+			}
 		}
 	}
 }
